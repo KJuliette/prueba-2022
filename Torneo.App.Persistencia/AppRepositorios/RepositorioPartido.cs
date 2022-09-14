@@ -5,7 +5,7 @@ namespace Torneo.App.Persistencia
     public class RepositorioPartido : IRepositorioPartido
     {
         private readonly DataContext _dataContext = new DataContext();
-        
+
         public Partido AddPartido(Partido partido, int local, int visitante, int idEstadio, int idArbitro)
         {
             var localEncontrado = _dataContext.Equipos.Find(local);
@@ -31,6 +31,18 @@ namespace Torneo.App.Persistencia
                 .Include(e => e.Estadio)
                 .ToList();
             return partidos;
+        }
+
+        public Partido GetPartido(int idPartido)
+        {
+            var partidoEncontrado = _dataContext.Partidos
+            .Where(e => e.Id == idPartido)
+            .Include(e => e.Local)
+            .Include(e => e.Visitante)
+            .Include(e => e.Arbitro)
+            .Include(e => e.Estadio)
+            .FirstOrDefault();
+            return partidoEncontrado;
         }
     }
 }

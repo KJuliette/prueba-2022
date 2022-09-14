@@ -7,6 +7,7 @@ builder.Services.AddSingleton<IRepositorioMunicipio, RepositorioMunicipio>();
 builder.Services.AddSingleton<IRepositorioDT, RepositorioDT>();
 builder.Services.AddSingleton<IRepositorioEquipo, RepositorioEquipo>();
 builder.Services.AddSingleton<IRepositorioEstadio, RepositorioEstadio>();
+builder.Services.AddSingleton<IRepositorioPartido, RepositorioPartido>();
 
 var app = builder.Build();
 
