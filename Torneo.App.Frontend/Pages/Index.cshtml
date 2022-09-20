@@ -3,6 +3,62 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<html lang="en">
 
+<head>
+    <title>CSS Website Layout</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: linear-gradient(0deg, #4b6cb7 3%, #041626 90%);
+            margin: 0;
+        }
 
+        /* Style the header */
+        .header {
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
 
+<body>
+    <div class="main">
+        
+
+        <svg viewbox="0 0 100 15">
+            
+
+            <defs>
+               
+                <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="20%" stop-color="#FADE07" />
+                    <stop offset="95%" stop-color="#7f6000" />
+                </linearGradient>
+                <pattern id="wave" x="10" y="1" width="120" height="50" patternUnits="userSpaceOnUse">
+                    <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
+                        mask="url(#mask)" fill="url(#gradient)">
+                        <animateTransform attributeName="transform" begin="0s" dur="3s" type="translate" from="0,0"
+                            to="40,0" repeatCount="indefinite" />
+                    </path>
+                </pattern>
+            </defs>
+            
+            <style>
+                
+                body {
+                    font-family: "Trirong", serif;
+                }
+            </style>
+            <text text-anchor="middle" x="50" y="15" font-size="8" fill="url(#wave)" fill-opacity="0.9">TORNEO DE</text>
+            <text text-anchor="middle" x="50" y="15" font-size="8" fill="url(#gradient)" fill-opacity="0.1">TORNEO
+                DE</text>
+        </svg>
+        
+    </div>
+
+</body>
+
+</html>
