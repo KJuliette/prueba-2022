@@ -2,15 +2,17 @@
 @model Torneo.App.Frontend.Pages.Municipios.DetailsModel
 @{
 }
-<h5 class="display-5">Detalle del municipio</h5>
-<table class="table table-striped">
-    <tr>
-        <th scope="col">Id</th>
-        <td>@Model.municipio.Id</td>
-    </tr>
-    <tr>
-        <th scope="col">Nombre</th>
-        <td>@Model.municipio.Nombre</td>
-    </tr>
-</table>
-<a class="btn btn-primary" asp-page="./Index">Volver</a>
+<p class="display-5">Detalle del municipio</p>
+<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+    <table class="table table-striped table-hover table-bordered table-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <td>@Model.municipio.Id</td>
+        </tr>
+        <tr>
+            <th scope="col">Nombre</th>
+            <td>@Model.municipio.Nombre</td>
+        </tr>
+    </table>
+    <a class="btn btn-primary" asp-page="./Index">Volver</a>
+</div>

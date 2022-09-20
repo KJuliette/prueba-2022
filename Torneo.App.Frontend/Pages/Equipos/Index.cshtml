@@ -2,36 +2,39 @@
 @model Torneo.App.Frontend.Pages.Equipos.IndexModel
 @{
 }
-<a class="btn btn-success" asp-page="./Create">Crear Equipo</a>
-<h1>Listado de Equipos</h1>
-<table class="table table-success table-striped">
-    <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Municipio</th>
-            <th scope="col">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var equipo in Model.equipos)
-        {
-            <tr>
-                <th scope="row">@equipo.Id</th>
-                <td>@equipo.Nombre</td>
-                <td>@equipo.Municipio.Nombre</td>
-                <td>
-                    <a class="btn btn-success" asp-page="./Details" asp-route-id="@equipo.Id">
-                        Detalle
-                    </a>
-                    <a class="btn btn-secondary" asp-page="./Edit" asp-route-id="@equipo.Id">
-                        Editar
-                    </a>
-                </td>
-
-
-            </tr>
-
-        }
-    </tbody>
-</table>
+<div class="row">
+    <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2">
+        <a class="btn btn-success" asp-page="./Create">Crear Equipo</a>
+    </div>
+    <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10">
+        <h1>Listado de Equipos</h1>
+        <table class="table table-striped table-hover table-bordered table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Municipio</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var equipo in Model.equipos)
+                {
+                    <tr>
+                        <th scope="row">@equipo.Id</th>
+                        <td>@equipo.Nombre</td>
+                        <td>@equipo.Municipio.Nombre</td>
+                        <td>
+                            <a class="btn btn-success" asp-page="./Details" asp-route-id="@equipo.Id">
+                                Detalle
+                            </a>
+                            <a class="btn btn-secondary" asp-page="./Edit" asp-route-id="@equipo.Id">
+                                Editar
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

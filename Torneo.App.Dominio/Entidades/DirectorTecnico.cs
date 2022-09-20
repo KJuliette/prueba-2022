@@ -8,7 +8,7 @@ namespace Torneo.App.Dominio
         public string Nombre { get; set; }
         [Display(Name = "Documento del Director técnico")]
         public string Documento { get; set; }
-        [Display(Name = "Nombre del Director técnico")]
+        [Display(Name = "Teléfono del Director técnico")]
         public string Telefono { get; set; }
     }
 }

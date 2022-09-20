@@ -2,24 +2,31 @@
 @model Torneo.App.Frontend.Pages.DTs.EditModel
 @{
 }
-<h5 class="display-5">Editar Director Técnico</h5>
-<form method="post">
-    <div class="form-group">
-        <label asp-for="directorTecnico.Id"></label>
-        <input asp-for="directorTecnico.Id" class="form-control" readonly>
+<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+    <p class="display-5">Editar Director Técnico</p>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="directorTecnico.Id"></label>
+            <input asp-for="directorTecnico.Id" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label asp-for="directorTecnico.Nombre"></label>
+            <input asp-for="directorTecnico.Nombre" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="directorTecnico.Documento"></label>
+            <input asp-for="directorTecnico.Documento" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="directorTecnico.Telefono"></label>
+            <input asp-for="directorTecnico.Telefono" class="form-control">
+        </div>
+        <div class="form-group mb-3 d-grid gap-2">
+            <button type="submit" class="btn btn-success btn-block">Actualizar Director Técnico </button>
+        </div>
+
+    </form>
+    <div class="d-grid gap-2">
+        <a class="btn btn-secondary" asp-page="./Index">Volver</a>
     </div>
-    <div class="form-group">
-        <label asp-for="directorTecnico.Nombre"></label>
-        <input asp-for="directorTecnico.Nombre" class="form-control">
-    </div>
-    <div class="form-group">
-        <label asp-for="directorTecnico.Documento"></label>
-        <input asp-for="directorTecnico.Documento" class="form-control">
-    </div>
-    <div class="form-group">
-        <label asp-for="directorTecnico.Telefono"></label>
-        <input asp-for="directorTecnico.Telefono" class="form-control">
-    </div>
-    <button type="submit" class="btn btn-success btn-block">Editar Director Técnico </button>
-</form>
-<a class="btn btn-secondary" asp-page="./Index">Volver</a>
+</div>
