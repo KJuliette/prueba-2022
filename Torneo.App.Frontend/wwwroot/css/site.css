@@ -11,8 +11,22 @@ html {
 html {
   position: relative;
   min-height: 100%;
+  background-color: #020f2a;
+
 }
 
 body {
+background-color: #020f2a;
   margin-bottom: 60px;
+}
+
+footer {
+  background-color: #020f2a;
+  font-size: x-large;
+  text-align: center;
+}
+
+h1, h5 , p{
+ color: white;
+
 }

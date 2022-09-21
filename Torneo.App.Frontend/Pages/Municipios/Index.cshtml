@@ -11,11 +11,11 @@
 
 <div class="row">
     <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2">
-        <a class="btn btn-success btn-lg" asp-page="./Create">Crear Municipio</a>
+        <a class="btn btn-warning btn-lg my-3" asp-page="./Create">Crear Municipio</a>
     </div>
     <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10">
         <h1>Listado de municipios</h1>
-        <table class="table table-striped table-hover table-bordered table-dark">
+        <table class="table table-striped table-hover table-bordered table-secondary">
             <thead class="thead/dark">
                 <tr>
                     <th scope="col">Id</th>
@@ -30,7 +30,7 @@
                         <th>@municipio.Id</th>
                         <td>@municipio.Nombre</td>
                         <td>
-                            <a class="btn btn-success" asp-page="./Details" asp-route-id="@municipio.Id">
+                            <a class="btn btn-primary" asp-page="./Details" asp-route-id="@municipio.Id">
                                 <u>Detalle</u>
                             </a>
                             <a class="btn btn-secondary" asp-page="./Edit" asp-route-id="@municipio.Id">
