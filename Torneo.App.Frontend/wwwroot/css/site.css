@@ -11,17 +11,17 @@ html {
 html {
   position: relative;
   min-height: 100%;
-  background-color: #020f2a;
+  background-color: #031336;
 
 }
 
 body {
-background-color: #020f2a;
+background-color: #031336;
   margin-bottom: 60px;
 }
 
 footer {
-  background-color: #020f2a;
+  background-color: #031336;
   font-size: x-large;
   text-align: center;
 }
