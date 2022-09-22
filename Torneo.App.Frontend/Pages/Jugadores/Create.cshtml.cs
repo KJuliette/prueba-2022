@@ -13,8 +13,8 @@ namespace Torneo.App.Frontend.Pages.Jugadores
         private readonly IRepositorioPosicion _repoPosicion;
 
         public Jugador jugador { get; set; }
-        public IEnumerable<Equipo> Equipo { get; set; }
-        public IEnumerable<Posicion> Posicion { get; set; }
+        public IEnumerable<Equipo> equipos { get; set; }
+        public IEnumerable<Posicion> posiciones { get; set; }
 
 
         public CreateModel(IRepositorioJugador repositorioJugador, IRepositorioEquipo
