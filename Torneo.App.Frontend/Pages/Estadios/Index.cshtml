@@ -2,32 +2,38 @@
 @model Torneo.App.Frontend.Pages.Estadios.IndexModel
 @{
 }
-<a class="btn btn-primary" asp-page="./Create">Crear estadio</a>
-<h1>Listado de Estadios</h1>
-<table class="table table-dark table-striped table-hover">
-    <thead class="thead/dark">
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Municipio</th>
-            <th scope="col">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var estadio in Model.estadios)
-        {
-            <tr>
-                <th>@estadio.Id</th>
-                <td>@estadio.Nombre</td>
-                <td>@estadio.Municipio.Nombre</td>
-                <td>
-                    <a class="btn btn-info" asp-page="./Details" asp-route-id="@estadio.Id">
-                        <u>Detalle</u>
-                    </a>
-                </td>
+<div class="row">
+    <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2">
+        <a class="btn btn-warning btn-lg my-3" asp-page="./Create">Crear Estadio</a>
+    </div>
+    <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10">
+        <h1>Listado de Estadios</h1>
+        <table class="table table-striped table-hover table-bordered table-secondary">
+            <thead class="thead/dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Municipio</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var estadio in Model.estadios)
+                {
+                    <tr>
+                        <th>@estadio.Id</th>
+                        <td>@estadio.Nombre</td>
+                        <td>@estadio.Municipio.Nombre</td>
+                        <td>
+                            <a class="btn btn-success" asp-page="./Details" asp-route-id="@estadio.Id">
+                                <u>Detalle</u>
+                            </a>
+                        </td>
 
-            </tr>
+                    </tr>
 
-        }
-    </tbody>
-</table>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

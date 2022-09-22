@@ -2,30 +2,34 @@
 @model Torneo.App.Frontend.Pages.Posiciones.IndexModel
 @{
 }
-<a class="btn btn-success" asp-page="./Create">Crear Posicion</a>
-<h1>Listado de posiciones</h1>
-<table class="table">
-    <thead class="thead/dark">
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var posicion in Model.posiciones)
-        {
-            <tr>
-                <th>@posicion.Id</th>
-                <td>@posicion.Nombre</td>
-                <td>
-                    <a class="btn btn-success" asp-page="./Details" asp-route-id="@posicion.Id">
-                        <u>Detalle</u>
-                    </a>
-                </td>
-
-            </tr>
-
-        }
-    </tbody>
-</table>
+<div class="row">
+    <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2">
+        <a class="btn btn-success btn-lg my-3" asp-page="./Create">Crear Posición</a>
+    </div>
+    <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10">
+        <h1>Listado de posiciones</h1>
+        <table class="table table-striped table-hover table-bordered table-dark">
+            <thead class="thead/dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var posicion in Model.posiciones)
+                {
+                    <tr>
+                        <th>@posicion.Id</th>
+                        <td>@posicion.Nombre</td>
+                        <td>
+                            <a class="btn btn-success" asp-page="./Details" asp-route-id="@posicion.Id">
+                                <u>Detalle</u>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
