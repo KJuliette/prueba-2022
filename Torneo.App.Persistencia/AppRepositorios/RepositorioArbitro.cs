@@ -24,5 +24,19 @@ namespace Torneo.App.Persistencia
             return arbitroEncontrado;
         }
 
+        public Arbitro UpdateArbitro(Arbitro arbitro)
+        {
+            var arbitroEncontrado = _dataContext.Arbitros.Find(arbitro.Id);
+            if (arbitroEncontrado != null)
+            {
+                arbitroEncontrado.Nombre = arbitro.Nombre;
+                arbitroEncontrado.Documento = arbitro.Documento;
+                arbitroEncontrado.Telefono = arbitro.Telefono;
+                arbitroEncontrado.Colegio = arbitro.Colegio;
+                _dataContext.SaveChanges();
+            }
+            return arbitroEncontrado;
+        }
+
     }
 }
