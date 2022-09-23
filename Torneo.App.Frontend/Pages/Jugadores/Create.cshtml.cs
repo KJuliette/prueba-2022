@@ -30,8 +30,13 @@ namespace Torneo.App.Frontend.Pages.Jugadores
 
         public IActionResult OnPost(Jugador jugador, int idEquipo, int idPosicion)
         {
+            if (ModelState.IsValid){
             _repoJugador.AddJugador(jugador, idEquipo, idPosicion);
             return RedirectToPage("Index");
+            }
+            else{
+                return Page();
+            }
         }
     }
 }
