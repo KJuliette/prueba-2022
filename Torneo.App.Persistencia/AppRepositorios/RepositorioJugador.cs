@@ -8,6 +8,7 @@ namespace Torneo.App.Persistencia
 
         public Jugador AddJugador(Jugador jugador, int idEquipo, int idPosicion)
         {
+            
             var equipoEncontrado = _dataContext.Equipos.Find(idEquipo);
             var posicionEncontrado = _dataContext.Posiciones.Find(idPosicion);
             jugador.Equipo = equipoEncontrado;
@@ -22,6 +23,7 @@ namespace Torneo.App.Persistencia
         {
             var jugadores = _dataContext.Jugadores
 
+                   
                    .Include(e => e.Equipo)
                    .Include(e => e.Posicion)
                    .ToList();
@@ -36,7 +38,22 @@ namespace Torneo.App.Persistencia
             .Include(e => e.Equipo)
             .Include(e => e.Posicion)
             .FirstOrDefault();
-             return jugadorEncontrado;
+            return jugadorEncontrado;
+        }
+
+        public Jugador UpdateJugador(Jugador jugador, int idEquipo, int idPosicion)
+        {
+            var jugadorEncontrado = GetJugador(jugador.Id);
+            var equipoEncontrado = _dataContext.Equipos.Find(idEquipo);
+            var posicionEncontrado = _dataContext.Posiciones.Find(idPosicion);
+            jugadorEncontrado.Nombre = jugador.Nombre;
+            jugadorEncontrado.Numero = jugador.Numero;
+            jugadorEncontrado.Equipo = equipoEncontrado;
+            jugadorEncontrado.Posicion = posicionEncontrado;
+            _dataContext.SaveChanges();
+
+            return jugadorEncontrado;
+
         }
 
     }
