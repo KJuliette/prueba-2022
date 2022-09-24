@@ -6,6 +6,7 @@ namespace Torneo.App.Persistencia
         public Estadio AddEstadio(Estadio estadio, int idMunicipio);
         public Estadio GetEstadio(int idEstadio);
         public IEnumerable<Estadio> GetAllEstadios();
+        public Estadio UpdateEstadio(Estadio estadio, int idMunicipio);
 
     }
 }

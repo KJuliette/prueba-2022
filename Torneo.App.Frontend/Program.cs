@@ -1,8 +1,15 @@
 using Torneo.App.Persistencia;
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Torneo.App.Frontend.Areas.Identity.Data;
 
+var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("IdentityDataContextConnection");builder.Services.AddDbContext<IdentityDataContext>(options =>
+    options.UseSqlServer(connectionString));builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<IdentityDataContext>();
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IRepositorioMunicipio, RepositorioMunicipio>();
 builder.Services.AddSingleton<IRepositorioDT, RepositorioDT>();
 builder.Services.AddSingleton<IRepositorioEquipo, RepositorioEquipo>();
@@ -10,6 +17,7 @@ builder.Services.AddSingleton<IRepositorioJugador, RepositorioJugador>();
 builder.Services.AddSingleton<IRepositorioArbitro, RepositorioArbitro>();
 builder.Services.AddSingleton<IRepositorioPartido, RepositorioPartido>();
 builder.Services.AddSingleton<IRepositorioPosicion, RepositorioPosicion>();
+builder.Services.AddSingleton<IRepositorioEstadio, RepositorioEstadio>();
 
 var app = builder.Build();
 
@@ -23,11 +31,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapRazorPages();
-
 app.Run();

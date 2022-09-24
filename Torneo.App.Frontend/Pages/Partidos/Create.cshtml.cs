@@ -9,29 +9,34 @@ namespace Torneo.App.Frontend.Pages.Partidos
     {
         private readonly IRepositorioPartido _repoPartido;
         private readonly IRepositorioEquipo _repoEquipo;
-        private readonly IRepositorioArbitro _repoArbitro;
         private readonly IRepositorioEstadio _repoEstadio;
-
-        public CreateModel(IRepositorioPartido repoPartido, IRepositorioEquipo
-repoEquipo, IRepositorioArbitro repoArbitro, IRepositorioEstadio repoEstadio)
-        {
-            _repoPartido = repoPartido;
-            _repoEquipo = repoEquipo;
-            _repoArbitro = repoArbitro;
-            _repoEstadio = repoEstadio;
-        }
+        private readonly IRepositorioArbitro _repoArbitro;
 
         public Partido partido { get; set; }
         public IEnumerable<Equipo> equipos { get; set; }
-        public IEnumerable<Arbitro> arbitros { get; set; }
         public IEnumerable<Estadio> estadios { get; set; }
+        public IEnumerable<Arbitro> arbitros { get; set; }
+
+        public CreateModel(IRepositorioPartido repoPartido, IRepositorioEquipo repoEquipo, IRepositorioEstadio repoEstadio, IRepositorioArbitro repoArbitro)
+        {
+            _repoPartido = repoPartido;
+            _repoEquipo = repoEquipo;
+            _repoEstadio = repoEstadio;
+            _repoArbitro = repoArbitro;
+        }
 
         public void OnGet()
         {
             partido = new Partido();
             equipos = _repoEquipo.GetAllEquipos();
-            arbitros = _repoArbitro.GetAllArbitros();
             estadios = _repoEstadio.GetAllEstadios();
+            arbitros = _repoArbitro.GetAllArbitros();
+        }
+
+        public IActionResult OnPost(Partido partido, int local, int visitante, int idEstadio, int idArbitro)
+        {
+                _repoPartido.AddPartido(partido, local, visitante, idEstadio, idArbitro);
+                return RedirectToPage("Index");
         }
     }
 }

@@ -12,7 +12,6 @@ namespace Torneo.App.Persistencia
             estadio.Municipio = municipioEncontrado;
             var estadioInsertado = _dataContext.Estadios.Add(estadio);
             _dataContext.SaveChanges();
-            
             return estadioInsertado.Entity;
         }
 
@@ -36,6 +35,15 @@ namespace Torneo.App.Persistencia
             return estadios;
         }
 
+        public Estadio UpdateEstadio(Estadio estadio, int idMunicipio)
+        {
+            var estadioEncontrado = GetEstadio(estadio.Id);
+            var municipioEncontrado = _dataContext.Municipios.Find(idMunicipio);
+            estadioEncontrado.Nombre = estadio.Nombre;
+            estadioEncontrado.Municipio = municipioEncontrado;
+            _dataContext.SaveChanges();
+            return estadioEncontrado;
+        }
 
     }
 }
