@@ -17,11 +17,13 @@ namespace Torneo.App.Persistencia
         {
             return _dataContext.Posiciones;
         }
+
         public Posicion GetPosicion(int idPosicion)
         {
             var posicionEncontrada = _dataContext.Posiciones.Find(idPosicion);
             return posicionEncontrada;
         }
+
         public Posicion UpdatePosicion(Posicion posicion)
         {
             var posicionEncontrada = _dataContext.Posiciones.Find(posicion.Id);

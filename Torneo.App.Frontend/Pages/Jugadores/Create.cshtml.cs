@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Torneo.App.Dominio;
 using Torneo.App.Persistencia;
+
 namespace Torneo.App.Frontend.Pages.Jugadores
 {
     public class CreateModel : PageModel
@@ -9,26 +10,24 @@ namespace Torneo.App.Frontend.Pages.Jugadores
         private readonly IRepositorioJugador _repoJugador;
         private readonly IRepositorioEquipo _repoEquipo;
         private readonly IRepositorioPosicion _repoPosicion;
+
         public Jugador jugador { get; set; }
         public IEnumerable<Equipo> equipos { get; set; }
         public IEnumerable<Posicion> posiciones { get; set; }
 
-
-        public CreateModel(IRepositorioJugador repositorioJugador, IRepositorioEquipo
-            repoEquipo, IRepositorioPosicion repoPosicion)
+        public CreateModel(IRepositorioJugador repoJugador, IRepositorioEquipo repoEquipo, IRepositorioPosicion repoPosicion)
         {
-            _repoJugador = _repoJugador;
+            _repoJugador = repoJugador;
             _repoEquipo = repoEquipo;
             _repoPosicion = repoPosicion;
-
         }
+
 
         public void OnGet()
         {
-            jugador= new Jugador();
-            equipos = _repoEquipos.GetAllEquipos();
+            jugador = new Jugador();
+            equipos = _repoEquipo.GetAllEquipos();
             posiciones = _repoPosicion.GetAllPosiciones();
-
         }
 
         public IActionResult OnPost(Jugador jugador, int idEquipo, int idPosicion)

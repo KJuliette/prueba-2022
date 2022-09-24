@@ -13,6 +13,7 @@ namespace Torneo.App.Frontend.Pages.Jugadores
         {
             _repoJugador = repoJugador;
         }
+
         public void OnGet()
         {
             jugadores = _repoJugador.GetAllJugadores();

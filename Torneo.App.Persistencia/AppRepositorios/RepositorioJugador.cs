@@ -45,16 +45,15 @@ namespace Torneo.App.Persistencia
         {
             var jugadorEncontrado = GetJugador(jugador.Id);
             var equipoEncontrado = _dataContext.Equipos.Find(idEquipo);
-            var posicionEncontrado = _dataContext.Posiciones.Find(idPosicion);
+            var posicionEncontrada = _dataContext.Posiciones.Find(idPosicion);
             jugadorEncontrado.Nombre = jugador.Nombre;
-            jugadorEncontrado.Numero = jugador.Numero;
             jugadorEncontrado.Equipo = equipoEncontrado;
-            jugadorEncontrado.Posicion = posicionEncontrado;
+            jugadorEncontrado.Posicion = posicionEncontrada;
             _dataContext.SaveChanges();
-
             return jugadorEncontrado;
-
         }
 
+ 
     }
+    
 }

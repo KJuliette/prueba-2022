@@ -6,12 +6,11 @@ builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IRepositorioMunicipio, RepositorioMunicipio>();
 builder.Services.AddSingleton<IRepositorioDT, RepositorioDT>();
 builder.Services.AddSingleton<IRepositorioEquipo, RepositorioEquipo>();
-builder.Services.AddSingleton<IRepositorioArbitro, RepositorioArbitro>();
 builder.Services.AddSingleton<IRepositorioJugador, RepositorioJugador>();
+builder.Services.AddSingleton<IRepositorioArbitro, RepositorioArbitro>();
+builder.Services.AddSingleton<IRepositorioPartido, RepositorioPartido>();
 builder.Services.AddSingleton<IRepositorioPosicion, RepositorioPosicion>();
-builder.Services.AddSingleton<IRepositorioPartido, RepositorioPartido>();
-builder.Services.AddSingleton<IRepositorioEstadio, RepositorioEstadio>();
-builder.Services.AddSingleton<IRepositorioPartido, RepositorioPartido>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

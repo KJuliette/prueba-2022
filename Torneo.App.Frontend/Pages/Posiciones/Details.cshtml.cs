@@ -13,6 +13,7 @@ namespace Torneo.App.Frontend.Pages.Posiciones
         {
             _repoPosicion = repoPosicion;
         }
+
         public IActionResult OnGet(int id)
         {
             posicion = _repoPosicion.GetPosicion(id);

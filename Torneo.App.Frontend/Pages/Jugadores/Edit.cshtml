@@ -15,15 +15,15 @@
         </div>
         <div class="form-group mb-3">
             <label asp-for="jugador.Numero" style="color: white;"></label>
-            <input asp-for="jugador.Numero" class="form-control">
+            <input asp-for="jugador.Numero" class="form-control" type="number">
         </div>
-        <div class="form-group">
+        <div class="form-group mb-3">
             <label asp-for="EquipoSelected" style="color: white;">Equipo seleccionado</label>
             <select asp-for="EquipoSelected" asp-items="@Model.EquipoOptions" name="idEquipo"
                 class="form-control">
             </select>
         </div>
-        <div class="form-group">
+        <div class="form-group mb-3">
             <label asp-for="PosicionSelected" style="color: white;">Posición</label>
             <select asp-for="PosicionSelected" asp-items="@Model.PosicionOptions" name="idPosicion" class="form-control">
             </select>
@@ -31,9 +31,9 @@
         <div class="form-group mb-3 d-grid gap-2">
             <button type="submit" class="btn btn-warning btn-block">Actualizar jugador</button>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Actualizar jugador</button>
     </form>
     <div class="d-grid gap-2">
         <a class="btn btn-secondary" asp-page="./Index">Volver</a>
     </div>
 </div>
+

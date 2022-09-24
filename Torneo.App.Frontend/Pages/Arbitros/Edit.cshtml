@@ -1,0 +1,35 @@
+﻿@page
+@model Torneo.App.Frontend.Pages.Arbitros.EditModel
+@{
+}
+<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+    <h1>Editar arbitro</h1>
+    <form method="post">
+        <div class="form-group mb-3">
+            <label asp-for="arbitro.Id" style="color: white;"></label>
+            <input asp-for="arbitro.Id" class="form-control" readonly>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="arbitro.Nombre" style="color: white;"></label>
+            <input asp-for="arbitro.Nombre" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="arbitro.Documento" style="color: white;"></label>
+            <input asp-for="arbitro.Documento" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="arbitro.Telefono" style="color: white;"></label>
+            <input asp-for="arbitro.Telefono" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="arbitro.Colegio" style="color: white;"></label>
+            <input asp-for="arbitro.Colegio" class="form-control">
+        </div>
+        <div class="form-group mb-3 d-grid gap-2">
+            <button type="submit" class="btn btn-warning btn-block">Actualizar arbitro</button>
+        </div>
+    </form>
+    <div class="d-grid gap-2">
+        <a class="btn btn-secondary" asp-page="./Index">Volver</a>
+    </div>
+</div>

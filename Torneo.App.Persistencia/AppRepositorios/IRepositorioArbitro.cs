@@ -6,5 +6,6 @@ namespace Torneo.App.Persistencia
         public Arbitro AddArbitro(Arbitro arbitro);
         public IEnumerable<Arbitro> GetAllArbitros();
         public Arbitro GetArbitro(int idArbitro);
+        public Arbitro UpdateArbitro(Arbitro arbitro);
     }
 }
