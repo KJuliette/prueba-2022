@@ -1,0 +1,80 @@
+﻿@page
+@model Torneo.App.Frontend.Pages.Jugadores.CreateModel
+@{
+}
+<<<<<<< HEAD
+<h1>Nuevo Jugador</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="jugador.Nombre"></label>
+        <input asp-for="jugador.Nombre" class="form-control">
+
+    </div>
+        <div class="form-group">
+        <label asp-for="jugador.Numero"></label>
+        <input asp-for="jugador.Numero" class="form-control">
+        
+    </div>
+    <div class="form-group">
+        <label for="idEquipo">Equipo</label>
+        <select id="idEquipo" name="idEquipo" class="form-control">
+            @foreach (var equipo in Model.Equipo)
+            {
+                <option value="@equipo.Id">@equipo.Nombre</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="idPosicion">Posicion</label>
+        <select id="idPosicion" name="idPosicion" class="form-control">
+            @foreach (var posicion in Model.Posicion)
+            {
+                <option value="@posicion.Id">@posicion.Nombre</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Crear Jugador</button>
+</form>
+<a class="btn btn-secondary" asp-page="./Index">Volver</a>
+=======
+<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+    <h1>Nuevo Jugador</h1>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="jugador.Nombre" style="color: white;"></label>
+            <input asp-for="jugador.Nombre" class="form-control" placeholder="Ingrese el nombre del Jugador" autofocus>
+        </div>
+        <div class="form-group">
+            <label asp-for="jugador.Numero" style="color: white;"></label>
+            <input asp-for="jugador.Numero" class="form-control" placeholder="Ingrese el número del Jugador" autofocus>
+        </div>
+
+        <div class="form-group">
+            <label for="idEquipo" style="color: white;">Equipo</label>
+            <select id="idEquipo" name="idEquipo" class="form-control">
+                @foreach (var equipo in Model.equipos)
+                {
+                    <option value="@equipo.Id">@equipo.Nombre</option>
+                }
+            </select>
+        </div>
+        <div class="form-group mb-3">
+            <label for="idPosicion" style="color: white;">Posición</label>
+            <select id="idPosicion" name="idPosicion" class="form-control">
+                @foreach (var posicion in Model.posiciones)
+                {
+                    <option value="@posicion.Id">@posicion.Nombre</option>
+                }
+            </select>
+        </div>
+        <div class="d-grid gap-2 mb-3">
+            <button type="submit" class="btn btn-primary btn-block">Crear posición</button>
+        </div>
+        
+    </form>
+    <div class="d-grid gap-2">
+        <a class="btn btn-secondary" asp-page="./Index">Volver</a>
+    </div>
+</div>
+>>>>>>> main

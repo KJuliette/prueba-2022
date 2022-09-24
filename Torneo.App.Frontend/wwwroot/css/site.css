@@ -1,6 +1,11 @@
+
+
+
+
 html {
   font-size: 14px;
 }
+
 
 @media (min-width: 768px) {
   html {
@@ -18,7 +23,9 @@ html {
 body {
 background-color: #031336;
   margin-bottom: 60px;
+  
 }
+
 
 footer {
   background-color: #031336;
