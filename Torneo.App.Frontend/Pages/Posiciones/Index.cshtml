@@ -4,11 +4,11 @@
 }
 <div class="row">
     <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2">
-        <a class="btn btn-success btn-lg my-3" asp-page="./Create">Crear Posición</a>
+        <a class="btn btn-warning btn-lg my-3" asp-page="./Create">Crear Posición</a>
     </div>
     <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10">
         <h1>Listado de posiciones</h1>
-        <table class="table table-striped table-hover table-bordered table-dark">
+        <table class="table table-striped table-hover table-bordered table-secondary">
             <thead class="thead/dark">
                 <tr>
                     <th scope="col">Id</th>
@@ -23,8 +23,11 @@
                         <th>@posicion.Id</th>
                         <td>@posicion.Nombre</td>
                         <td>
-                            <a class="btn btn-success" asp-page="./Details" asp-route-id="@posicion.Id">
+                            <a class="btn btn-primary" asp-page="./Details" asp-route-id="@posicion.Id">
                                 <u>Detalle</u>
+                            </a>
+                            <a class="btn btn-secondary" asp-page="./Edit" asp-route-id="@posicion.Id">
+                                Editar
                             </a>
                         </td>
                     </tr>

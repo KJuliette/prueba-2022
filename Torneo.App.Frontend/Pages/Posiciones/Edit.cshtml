@@ -1,0 +1,23 @@
+﻿@page
+@model Torneo.App.Frontend.Pages.Posiciones.EditModel
+@{
+}
+<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+    <h1>Editar posición</h1>
+    <form method="post">
+        <div class="form-group mb-3">
+            <label asp-for="posicion.Id" style="color: white;"></label>
+            <input asp-for="posicion.Id" class="form-control" readonly>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="posicion.Nombre" style="color: white;"></label>
+            <input asp-for="posicion.Nombre" class="form-control">
+        </div>
+        <div class="form-group mb-3 d-grid gap-2">
+            <button type="submit" class="btn btn-warning btn-block">Editar posición</button>
+        </div>
+    </form>
+    <div class="d-grid gap-2">
+        <a class="btn btn-secondary" asp-page="./Index">Volver</a>
+    </div>
+</div>
