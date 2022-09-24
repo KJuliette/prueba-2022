@@ -4,6 +4,7 @@ using Torneo.App.Dominio;
 using Torneo.App.Persistencia;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
+
 namespace Torneo.App.Frontend.Pages.Jugadores
 {
     public class EditModel : PageModel
@@ -26,6 +27,7 @@ namespace Torneo.App.Frontend.Pages.Jugadores
         }
 
         public IActionResult OnGet(int id)
+
         {
             jugador = _repoJugador.GetJugador(id);
             EquipoOptions = new SelectList(_repoEquipo.GetAllEquipos(), "Id", "Nombre");
@@ -33,6 +35,7 @@ namespace Torneo.App.Frontend.Pages.Jugadores
             PosicionOptions = new SelectList(_repoPosicion.GetAllPosiciones(), "Id", "Nombre");
             EquipoSelected = jugador.Equipo.Id;
             PosicionSelected = jugador.Posicion.Id;
+
             if (jugador == null)
             {
                 return NotFound();
@@ -41,9 +44,11 @@ namespace Torneo.App.Frontend.Pages.Jugadores
             {
                 return Page();
             }
+
         }
 
         public IActionResult OnPost(Jugador jugador, int idEquipo, int idPosicion)
+
         {
             _repoJugador.UpdateJugador(jugador, idEquipo, idPosicion);
             return RedirectToPage("Index");
@@ -51,6 +56,5 @@ namespace Torneo.App.Frontend.Pages.Jugadores
 
 
     }
-
 
 }

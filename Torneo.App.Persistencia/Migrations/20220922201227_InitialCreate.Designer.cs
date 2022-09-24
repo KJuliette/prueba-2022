@@ -12,8 +12,8 @@ using Torneo.App.Persistencia;
 namespace Torneo.App.Persistencia.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220907173549_Entidades")]
-    partial class Entidades
+    [Migration("20220922201227_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -246,7 +246,7 @@ namespace Torneo.App.Persistencia.Migrations
                         .IsRequired();
 
                     b.HasOne("Torneo.App.Dominio.Municipio", "Municipio")
-                        .WithMany()
+                        .WithMany("Equipos")
                         .HasForeignKey("MunicipioId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -319,6 +319,11 @@ namespace Torneo.App.Persistencia.Migrations
                     b.Navigation("Local");
 
                     b.Navigation("Visitante");
+                });
+
+            modelBuilder.Entity("Torneo.App.Dominio.Municipio", b =>
+                {
+                    b.Navigation("Equipos");
                 });
 #pragma warning restore 612, 618
         }

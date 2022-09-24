@@ -18,6 +18,7 @@ namespace Torneo.App.Persistencia
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = Torneo2");
+                //optionsBuilder.UseSqlServer("Data Source = MSI\\SQLEXPRESS; Initial Catalog = Torneo2; Trusted_Connection=True");
             }
         }
 

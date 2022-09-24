@@ -1,0 +1,32 @@
+﻿@page
+@model Torneo.App.Frontend.Pages.DTs.EditModel
+@{
+}
+<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+    <p class="display-5">Editar Director Técnico</p>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="directorTecnico.Id" style="color: white;"></label>
+            <input asp-for="directorTecnico.Id" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label asp-for="directorTecnico.Nombre" style="color: white;"></label>
+            <input asp-for="directorTecnico.Nombre" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="directorTecnico.Documento" style="color: white;"></label>
+            <input asp-for="directorTecnico.Documento" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="directorTecnico.Telefono" style="color: white;"></label>
+            <input asp-for="directorTecnico.Telefono" class="form-control">
+        </div>
+        <div class="form-group mb-3 d-grid gap-2">
+            <button type="submit" class="btn btn-warning btn-block">Actualizar Director Técnico </button>
+        </div>
+
+    </form>
+    <div class="d-grid gap-2">
+        <a class="btn btn-secondary" asp-page="./Index">Volver</a>
+    </div>
+</div>
