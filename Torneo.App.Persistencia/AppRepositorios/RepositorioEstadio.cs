@@ -16,6 +16,16 @@ namespace Torneo.App.Persistencia
             return estadioInsertado.Entity;
         }
 
+        public Estadio GetEstadio(int idEstadio)
+        {
+            var estadioEncontrado = _dataContext.Estadios
+                .Where(e => e.Id == idEstadio)
+                .Include(e => e.Municipio)
+                .FirstOrDefault();
+            return estadioEncontrado;
+
+        }
+
         public IEnumerable<Estadio> GetAllEstadios()
         {
             var estadios = _dataContext.Estadios

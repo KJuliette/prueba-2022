@@ -2,23 +2,37 @@
 @model Torneo.App.Frontend.Pages.DTs.IndexModel
 @{
 }
-<h1>Listado de directores tecnicos</h1>
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var dt in Model.dts)
-        {
-            <tr>
-                <th scope="row">@dt.Id</th>
-                <td>@dt.Nombre</td>
-            </tr>
+<div class="row">
+    <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2">
+        <a class="btn btn-warning btn-lg my-3" asp-page="./Create">Crear Director Técnico</a>
+    </div>
+    <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10">
+        <h1>Listado de directores tecnicos</h1>
+        <table class="table table-striped table-hover table-bordered table-secondary">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var dt in Model.dts)
+                {
+                    <tr>
+                        <th scope="row">@dt.Id</th>
+                        <td>@dt.Nombre</td>
+                        <td>
+                            <a class="btn btn-primary" asp-page="./Details" asp-route-id="@dt.Id">
+                                <u>Detalle</u>
+                            </a>
+                            <a class="btn btn-secondary" asp-page="./Edit" asp-route-id="@dt.Id">
+                                Editar
+                            </a>
+                        </td>
+                    </tr>
 
-        }
-    </tbody>
-</table>
+                }
+            </tbody>
+        </table>
+   </div>

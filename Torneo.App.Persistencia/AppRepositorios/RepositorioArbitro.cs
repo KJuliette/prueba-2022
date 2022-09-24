@@ -5,7 +5,7 @@ namespace Torneo.App.Persistencia
     public class RepositorioArbitro : IRepositorioArbitro
     {
         private readonly DataContext _dataContext = new DataContext();
-        
+
         public Arbitro AddArbitro(Arbitro arbitro)
         {
             var arbitroInsertado = _dataContext.Arbitros.Add(arbitro);
@@ -16,6 +16,12 @@ namespace Torneo.App.Persistencia
         public IEnumerable<Arbitro> GetAllArbitros()
         {
             return _dataContext.Arbitros;
+        }
+
+        public Arbitro GetArbitro(int idArbitro)
+        {
+            var arbitroEncontrado = _dataContext.Arbitros.Find(idArbitro);
+            return arbitroEncontrado;
         }
 
     }
