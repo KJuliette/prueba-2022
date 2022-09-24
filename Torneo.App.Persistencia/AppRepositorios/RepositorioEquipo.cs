@@ -50,8 +50,6 @@ namespace Torneo.App.Persistencia
             _dataContext.SaveChanges();
 
             return equipoEncontrado;
-
-
         }
 
         public IEnumerable<Equipo> GetEquiposMunicipio(int idMunicipio)
