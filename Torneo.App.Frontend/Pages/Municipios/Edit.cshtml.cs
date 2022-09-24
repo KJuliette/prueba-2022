@@ -27,7 +27,7 @@ namespace Torneo.App.Frontend.Pages.Municipios
         }
 
         public IActionResult OnPost(Municipio municipio)
-        {
+        {    
             _repoMunicipio.UpdateMunicipio(municipio);
             return RedirectToPage("Index");
         }
